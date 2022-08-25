@@ -13,7 +13,7 @@ jobs:
     strategy:
       max-parallel: 4
       matrix:
-        python-version: [3.7, 3.8, 3.9]
+        python-version: [3.8]
 
     steps:
     - uses: actions/checkout@v3
@@ -27,6 +27,3 @@ jobs:
         pip install pipenv
         pipenv install
         pipenv run python websocket_echo/manage.py runserver
-    - name: Run Tests
-      run: |
-        python manage.py test
